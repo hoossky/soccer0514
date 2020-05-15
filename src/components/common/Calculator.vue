@@ -73,7 +73,7 @@
                 this.current = `${this.operator(parseFloat(this.previous),
                     parseFloat(this.current))}`
                 this.previous = null
-            },
+            }
 
         }
     }
