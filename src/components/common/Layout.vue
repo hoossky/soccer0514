@@ -7,11 +7,10 @@
                 :join="join"></slot>
     </header>
     <aside id="sidebar">
-
+        <slot name="sidebar"></slot>
     </aside>
     <section id="content">
-        <slot name="content"
-                :content="content"></slot>
+        <slot name="content"></slot>
 
     </section>
     <footer>
@@ -24,9 +23,9 @@
 <script>
     export default {
         name: "Layout",
-        data : ()=>{
+        data(){
             return{
-                title : '축구정보 시스템',
+                title : '축구 정보 시스템',
                 login : '로그인',
                 join : '회원 가입',
                 content : '축구 경기 일정 검색',

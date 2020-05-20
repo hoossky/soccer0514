@@ -12,7 +12,8 @@
 
                 <ul class="menu">
                     <li v-for="i of sidebars" :key="i.menu">
-                        <router-link to="counter">{{i.menu}}</router-link>
+                        <router-link :to="i.link">{{i.menu}}</router-link>
+                       <!--<a @click="menu(i.menu)">{{i.menu}}</a>-->
                     </li>
 
                 </ul>
@@ -34,18 +35,43 @@
         name: "Home",
         components : {Layout},
         data(){ //data : ()=>{
-            return{
-                sidebars :[
-                    {menu: '쓰 기'},
-                    {menu: '목 록'},
-                    {menu: '검 색'},
-                    {menu: '수 정'},
-                    {menu: '삭 제'},
-                    {menu: '회원 수'}
+            return {
+                sidebars: [
+                    {menu: '등 록', link: '/register'},
+                    {menu: '목 록', link: '/list'},
+                    {menu: '검 색', link: '/search'},
+                    {menu: '수 정', link: '/update'},
+                    {menu: '삭 제', link: '/delete'},
+                    {menu: '회원 수', link: '/vuexCounter'}
                 ]
+            }
+
+        },
+        methods:{
+                menu(i){
+                    switch(i) {
+                        case '등 록':
+                            alert('0')
+                            break;
+                        case '목 록':
+                            alert('1')
+                            break;
+                        case '검 색',
+                            alert('2'):
+                            break;
+                        case '수 정',
+                            alert('3'):
+                            break;
+                        case '삭 제',
+                            alert('4'):
+                            break;
+                        case '회원 수',
+                            alert('5'):
+                            break;
+                    }
+                }
 
             }
-        }
     }
 </script>
 <style scoped>
