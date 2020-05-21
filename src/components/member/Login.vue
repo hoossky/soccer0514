@@ -1,7 +1,6 @@
 <template>
     <div>
     <h2>로그인</h2>
-    <form method="post">
         <div class="imgcontainer">
             <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
         </div>
@@ -25,13 +24,20 @@
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
-    </form>
     </div>
 </template>
 
 <script>
 
-    export default { //export = return
+    import {mapState} from 'vuex'
+    export default {
+        computed : {
+            ...mapState(
+                {fail: state => state.player.fail,
+                    auth : state => state.player.auth
+                }
+            )
+        },
         data(){
             return {
                 userid:'',
@@ -42,8 +48,8 @@
         methods : {
             login(){
                 alert('유저 아이디: '+this.userid)
-                this.$store.dispatch('player/login',{playerId: this.userid,backNo: this.password})
-            },
+                this.$store.dispatch('player/login',{playerId: '2000003', backNo: '40'})//어나니머스 함수
+            }, // dispatch 방향 설정(액션의 player/login으로 방향)
             moveToPassword(){
                 document.getElementById('password').focus() //$('#').val()
 
