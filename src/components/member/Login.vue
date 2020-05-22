@@ -50,6 +50,7 @@
                 alert('유저 아이디: '+this.userid)
                 this.$store.dispatch('player/login',{playerId: '2000003', backNo: '40'})//어나니머스 함수
             }, // dispatch 방향 설정(액션의 player/login으로 방향)
+
             moveToPassword(){
                 document.getElementById('password').focus() //$('#').val()
 
